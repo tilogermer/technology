@@ -50,10 +50,11 @@ class PlattformsController < ApplicationController
 
   private
   def plattform_params
-    params.require(:plattform).permit(:name, :description, :owner, :account, :account_date_start, :price, :image, :all_tags)
+    params.require(:plattform).permit(:name, :description, :owner, :account, :account_date_start, :price,
+     :slug, :image, :all_tags)
   end
 
   def find_plattform
-    @plattform = Plattform.find(params[:id])
+    @plattform = Plattform.friendly.find(params[:id])
   end
 end

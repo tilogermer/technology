@@ -1,22 +1,22 @@
-<h1>Plattforms#show</h1>
-<p>Find me in app/views/plattforms/show.html.erb</p>
+
 
 <div class="row">
 	<div class="col-md-4">
 		<div class="card">
-			image
+			<%= image_tag @plattform.image_url, class: "img-fluid" %>
 			
 		</div>
 		
 	</div>
 	<div class="col-md-8">
 		<h5><%= @plattform.name %></h5>
+		<p><%= raw tag_links(@plattform.all_tags) %></p>
 		<ul>
-			<li><%= @plattform.owner %></li>
-			<li><%= @plattform.description %></li>
-			<li><%= @plattform.account %></li>
-			<li><%= @plattform.account_date_start %></li>
-			<li><%= @plattform.price %></li>
+			<li>Operator: <%= @plattform.owner %></li>
+			<li>Content: <%= @plattform.description %></li>
+			<li>Account: <%= @plattform.account %></li>
+			<li>Start Learning: <%= @plattform.account_date_start %></li>
+			<li>Cost/month <%= @plattform.price %> EUR</li>
 		</ul>
 		<div class="links btn-group">
 			<%= link_to "Back", plattforms_path, class: "btn btn-custom" %>
