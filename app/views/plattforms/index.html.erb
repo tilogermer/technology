@@ -1,4 +1,7 @@
-
+<% if params[:tag] %>
+<h3><span class="badge badge-info"><%= params[:tag] %> </span></h3>
+<%= link_to "Back", plattforms_path, class: "btn btn-outline-secondary btn-sm float-right small-device"  %>
+<% else %>
 <h1>Platforms</h1>
 <div class="tags-cloud glassy-bg">
   <h4>Tags Cloud</h4>
@@ -6,12 +9,14 @@
     <%= link_to tag.name, tag_path(tag.name), class: css_class %>
   <% end %>
 </div>
+<% end %>
 
 <div class="row">
 	<% @plattforms.each do |plattform| %>
 	
 	<div class="col-md-4 col-sm-6">
-	<a href="/plattforms/<%= plattform.id %>">
+	<a href="/plattforms/<%= plattform.slug %>">
+	
 	<%= image_tag plattform.image_url.to_s, class: "img-fluid" %>
 	<h5><%= plattform.name %></h5>
 	<p><%= plattform.owner %></p>

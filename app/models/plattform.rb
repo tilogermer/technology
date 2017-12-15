@@ -38,4 +38,5 @@ class Plattform < ApplicationRecord
       Tag.find_by_name!(name).plattforms
     end
 
+    
 end
