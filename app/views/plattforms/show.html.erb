@@ -1,0 +1,28 @@
+<h1>Plattforms#show</h1>
+<p>Find me in app/views/plattforms/show.html.erb</p>
+
+<div class="row">
+	<div class="col-md-4">
+		<div class="card">
+			image
+			
+		</div>
+		
+	</div>
+	<div class="col-md-8">
+		<h5><%= @plattform.name %></h5>
+		<ul>
+			<li><%= @plattform.owner %></li>
+			<li><%= @plattform.description %></li>
+			<li><%= @plattform.account %></li>
+			<li><%= @plattform.account_date_start %></li>
+			<li><%= @plattform.price %></li>
+		</ul>
+		<div class="links btn-group">
+			<%= link_to "Back", plattforms_path, class: "btn btn-custom" %>
+			<%= link_to "Edit", edit_plattform_path, class: "btn btn-custom" %>
+			<%= link_to "Delete", plattform_path(@plattform), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-custom" %>
+		</div>
+		
+	</div>
+</div>
